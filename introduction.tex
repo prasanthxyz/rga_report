@@ -1,0 +1,27 @@
+\section{Introduction}
+The purpose of this project was to improve and add several functionalities to the Report Grading App of Bodhitree. As a part of the project, we worked with the instructor and the TA’s to know what deficiencies exist in the Report Grading App and what functionalities should be added to improve the end user experience, the end users being the instructor, TA’s as well as the students.
+
+\subsection{Technology used} %The technology used in this web development project is:
+\begin{enumerate}
+\item Python 2.7 with Django Framework for its back end.
+\item Javascript (JQuery and React.js libraries), HTML and CSS to render the website front end.
+\item MySQL database for storage
+\end{enumerate}
+
+\subsection{Application Modules relevant to my work} %Main Application Modules in BodhiTree
+
+\subsubsection{Quiz}
+Quizzes can be in-video or stand-alone. A quiz is composed of question modules. Each question module contains a set of questions. The number of attempts for a question can be set, and the history data shows no. of attempts and answer status for a user.\\
+\emph{Database tables (classes) used: Quiz, QuestionModule, Question, QuestionHistory}
+
+\subsubsection{Discussion Forum}
+The forum associated with a course. It has subscription and moderation capabilities.\\
+\emph{Database tables (classes) used: DiscussionForum, Content and Activity}
+
+\subsubsection{Concept}
+Concepts make groups, groups make a course. Concept is basically a set of learning elements arranged as a playlist.\\
+\emph{Database tables (classes) used: Concept, ConceptHistory}
+
+\subsubsection{Video}
+Inside a concept, video lectures with optional subtitles can be added. HTML5 video player is used through video.js. Within a video, section markers and quiz markers can be added to denote the beginning of a new section or quiz respectively. It makes it easy to access a particular section or in-video quizzes.\\
+\emph{Database tables (classes) used: Video, VideoHistory, Marker}
