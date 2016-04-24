@@ -1,2 +1,16 @@
 \section{Upload helper file}
-Instructor might have some sample helper files and/or code to publish to students. A feature was implemented to facilitate this.
+% Instructor might have some sample helper files and/or code to publish to students. A feature was implemented to facilitate this.
+When assignments are uploaded, in some cases it is necessary to upload files having certain code or some other relevant material which is needed for the completion of the assignment. This feature was implemented to allow the instructor to upload the supporting files for the assignment in tar.gz format which are available for the students to download while completing the assignment.
+
+\subsection{Design}
+\begin{enumerate}
+\item Upload the helper files in tar.gz format while creating the assignment or while modifying the assignment.
+\item The uploaded file is saved on the server, which can be downloaded by the student's or the TA's on the lab template page.
+\end{enumerate}
+
+\subsection{Future Improvements}
+\begin{enumerate}
+\item Whenever the helper file is downloaded, it's name is always helpercode.tar.gz. This can lead to confusion when several lab's are concerned. It can be improved to have a distinctive name.
+\item Extend the helper file upload to support more formats other than tar.gz
+\item Allowing the upload of multiple files.
+\end{enumerate}
