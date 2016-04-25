@@ -6,9 +6,11 @@ According to the current app design, exams are answered individually. Every stud
 \subsection{Design and Implementation}
 Two database tables are used to store student grouping information. The first table LabGroup stores various groups for a particular Lab. The second table StudentGroup maps students to LabGroups, thus defining a group of students that are a LabGroup -- writing exams as a group for a particular lab.\\
 
-A helper function `student\_to\_group' was defined which takes a student-id, course-id and lab number, and returns the LabGroup ID. This was used to map students to their groups.
+A helper function `student\_to\_group' was defined which takes a student-id, course-id and lab number, and returns the LabGroup ID. This was used to map students to their groups.\\
 
-Previous design had one folder in the server per student (folder name is student id), which contains his/her answers as an xml file. In-order to facilitate group assignments, one folder should be assigned to a group (folder name should be group id to be unique). As the students answer the question paper, answers reach their group's folder. Simultaneous answering is possible.
+Previous design had one folder in the server per student (folder name is student id), which contains his/her answers as an xml file. In-order to facilitate group assignments, one folder should be assigned to a group (folder name should be group id to be unique). As the students answer the question paper, answers reach their group's folder. Simultaneous answering is possible.\\
+
+TODO: Improve this. An interface for the instructors/TAs to see all the list of submissions ordered in student groups. All the students in the groups are shown as a list. The Deadline of the assignment is also shown on the top.
 
 \subsection{Problems Faced}
 Multiple (till now the maximum observed was two) LabGroups were forming for the same StudentGroups when the server load was high. On stress-testing the group-creating URL, this problem was replicated.\\
