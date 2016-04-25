@@ -1,7 +1,6 @@
 \section{File Submissions UI}
 
 \subsection{Uploading files by students}
-The file submission UI was pretty confusing. Now it is shown at a better location, plus the uploaded files are displayed to the student.
+The interface for student file upload was confusing. The previous design had a button in the bottom saying `submit additional files' and no explicit `Finish Exam' button. This created confusion about a closure of the exam. Also, no feature was present to verify that the files were indeed uploaded.\\
 
-\subsection{Downloading submitted files}
-The file submission UI was very difficult and confusing. A button is shown now to download submitted files easily.
+Along with a Finish Exam button, a UI was implemented where the list of uploaded files are displayed along with their MD5Sum. The students can see the files uploaded and verify the integrity using the MD5Sum. Delete/Download of existing files are not allowed, but replacing a file is allowed (within the deadline) by uploading again with the same name.\\
