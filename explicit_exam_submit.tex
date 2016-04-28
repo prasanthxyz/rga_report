@@ -1,16 +1,18 @@
 \section{Explicit Exam Submission}
 
 \subsection{Problem Statement}
-In the case of lab-exams, students who finish early should be allowed to leave the exam hall. The previous design offered no exam "submit" feature, meaning the answer sheet will be editable until the hard deadline of the lab. So, students who leave the exam hall can continue answering the questions on the website. A feature is required to facilitate explicit finishing the exam which will render the answer sheet for a particular group uneditable.
+In the case of lab-exams, students who finish early should be allowed to leave the exam hall. The previous design offered no exam ``submit'' feature, meaning the answer sheet will be editable until the hard deadline of the lab. So, students who leave the exam hall can continue answering the questions on the website from outside. A feature is required to facilitate explicit finishing of the exam which should render their answer sheet uneditable.
 
 \subsection{Design and Implementation}
-The database table SubmissionTime stores the time at which a group answered last. A new column was created in the table `user\_finished\_exam' which is supposed to store the ID of the user finishes the exam. The default value of this column is NULL. So, if the value of this is NULL before deadline, it means the group hasn't finished the exam yet. If it is NULL after deadline, it means the exam was automatically finished at deadline. If a user ID is present in the column, then that particular user in the group has explicitly finished the exam at the time stored in the row.
+The database table SubmissionTime stores the time at which a group answered last. A new column was created in the table called `user\_finished\_exam' which stores the ID of the user who finished the exam. The default value of this column is NULL.
+\begin{itemize}
+\item If this value is NULL before deadline, it means the group hasn't finished the exam yet.
+\item If it is NULL after deadline, it means the exam was automatically finished at deadline.
+\item If it is a user ID, that particular user in the group has explicitly finished the exam at the time stored in this row.
+\end{itemize}
 
-If a user id is found in the column before deadline, the exam-paper is rendered non-editable. The student can leave the exam hall and view his answers, but cannot edit them anymore.
+If a user id is found in the column before deadline (explicit finish), the exam-paper is rendered non-editable for the group. The student can leave the exam hall and view his answers, but cannot edit them anymore.
 
-A `Finish Exam' button is given in the student interface that modifies the student's group's SubmissionTime table row. The `user\_finished\_exam' value is set as the user who pressed the Finish Exam button. The answer sheet is rendered non-editable (view-only) to all the group members, and the information of who finished the exam and time of submission is shown.
+A `Finish Exam' button is given in the student interface that does this explict submit. The `user\_finished\_exam' value for the group is set as the user who pressed the button. The answer sheet is rendered non-editable (view-only) to all the group members, and the information of who finished the exam and time of submission is shown in the paper.
 
-The information of whether a group has finished the exam or not is shown in the submissions-list of the lab.
-
-\subsection{Problems Faced}
-TODO: Can't remember any, were there any?
+The information of whether a group has finished the exam or not is shown in the submissions-list of the lab. If they have explicitly finished the exam, their submission in the list is tagged as `Submitted at \textless submission time\textgreater'. After the deadline, all the non-submitted papers are indicated as `Auto submitted at deadline'.

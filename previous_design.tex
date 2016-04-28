@@ -1,19 +1,18 @@
 \section{Report Grading App}
 \subsection{Functionality}
-Report Grading App an application for conducting lab examinations, assignments, cribs, and marks management without any hassle.\\
-There are four main parts which need to be handled in any of these:
+Report Grading App an application for conducting lab examinations, assignments, cribs, and marks management without any hassle. There are four main operations which need to be handled in these:
 \subsubsection{Setting questions}
-Professors generally have their lab question papers in odt, doc, and pdf formats. The app currently allows uploading a question paper in odt format, which will be converted to HTML format so that it can be shown easily in Bodhitree. After the conversion, professor is provided with an interface to edit the question paper directly in the website. There is a "Student's View" too, to check how it is rendered for students.\\
+Professors generally have their lab question papers in odt, doc, and pdf formats. The app currently allows uploading a question paper in odt format, which will be converted to HTML so that it can be shown directly in the website (Bodhitree). After the upload and conversion, professor is provided with an interface to edit the question paper online. There is a ``Student's View'' too, to check how it is rendered for students.\\
 \\
 \textbf{Template for Question Paper}\\
 The question paper uploaded must be in ODT file format. A list of questions for which answering template is to be provided for the student is preceded
 by a Question Tag as given below. The first list that appears after the Question Tag "Q" is
-considered to be a question list. All other lists are considered as instruction lists.
+considered to be a question list. All other lists are considered as instruction lists.\\
 ....\\
 ....\\
 ....\\
 Q\\
-.... (No ordered or unordered lists in this section)\\
+\textless Question Section Title\textgreater (No ordered or unordered lists here)\\
 \begin{itemize}
 	\item \textless Question1\textgreater
 	\begin{itemize}
@@ -26,10 +25,10 @@ Q\\
 ....
 
 \subsubsection{Answering questions}
-We have a student-interface to answer the questions online. A rich-text editor textbox will be associated with every question in the question paper where the students can write their answers. The textboxes will disappear showing only the questions and the un-editable answers at deadline. There is also a functionality to submit additional files if required.
+We have a student-interface to answer the questions online. A rich-text editor textbox will be associated with every question in the question paper where the students can write their answers. At deadline, the input textboxes will disappear showing only the questions and the answers as uneditable text. There is also a functionality to submit additional files if required.
 
 \subsubsection{Evaluation}
-The TA interface is similar to the student interface. It renders the question paper set by the professor along with the responses provided by the student. Every question-answer combination is associated with an input field where the TA can enter the marks, and a rich-text editor textbox where comments can be added.
+The TA interface is similar to the student interface. It renders the question paper along with the responses provided by the student. Every question-answer combination is associated with an input field where the TA can enter the marks, and a rich-text editor textbox where comments can be added.
 
 \subsubsection{Consolidation of the marks}
 The instructor interface also provides a function to consolidate marks given to each student for an assignment into a csv file and  automatically upload it to a Google spreadsheet provided by the instructor. This makes it simple for the instructor to float the spreadsheet to the students for reviewing the marks awarded.
@@ -37,7 +36,7 @@ The instructor interface also provides a function to consolidate marks given to 
 
 \subsection{Design}
 \subsubsection{Backend Design}
-The student-responses and instructor-comments are stored in files. Each student has a predetermined path in the filesystem for the response and instructor-comment files for a lab assignment. It is simple to read the required file and insert the responses into the template question paper in the website, and render them as student view or TA view. This file-storage design is better than using a database for storing student-responses since we require multiple queries to get the required info to be rendered in a single web page. Here it is just a single file-read operation.
+The student-responses and instructor comments are stored in files. Each student/group has a predetermined path in the filesystem where their responses and the corresponding instructor comments are stored. These two files are simply read and inserted into the question paper and rendered as student view or TA view. This file-storage design is better than using a database for storing student-responses since we require multiple queries to get the required info. Here it is just a single file-read operation.
 
 \subsubsection{Database Tables}
 The following are the tables that were used in the application
