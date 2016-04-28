@@ -1,17 +1,16 @@
 \section{TA Evaluation UI Improvements}
 
-\subsection{Evaluation interface}
+Two static panels have been added which contains the navigation and download options which are essential and frequently used during evalution by the TAs and the instructor. These panels have been optimally designed to occupy minimum space so as to not interfere with the viewability of the answer sheet, as well to provide maximum usability.
 
-\begin{enumerate}
-\item A static panel has been added which contains all the navigation buttons and the the submitted files download options which are essential and frequently required during evalution by the TA's and the instructor. This panel has been optimally designed to occupy minimum space so as to not interfere with the viewability of the report as well to provide maximum usability.
-\item The static panel contains next and previous buttons for the TA's. The TA's can easily navigate through all the submissions of each group using these buttons. It provides much improvements than the previous "Search for student" interface.
-\item An colour coded index had been added to easily access particular questions, and the colour denotes the status of evaluation. "Green" coloured background denotes that the question has been already evaluated. "White" coloured background means that the question is yet to be evaluated.
-\item Marks for those questions which are not answered as automatically set as zero, and the status is set as `evaluated' so that the TAs need not check them at all.
-\end{enumerate}
+\subsection{Navigation Panel}
+The navigation panel contains \textbf{Next} and \textbf{Previous} buttons which can be used by the TAs for easily navigation to other submissions. A \textbf{Download submitted files} button is also present in the panel, which when clicked downloads the files submitted as part of the current answer sheet. This is much better than the earlier ``Search for student files'' interface.
 
-\subsection{Jump to questions, easy navigation}
-The panel shows links to all question on the right side which can be clicked to easily navigate to that question.
+\subsection{Question Index Panel}
+A static index panel has been added to the answer sheet that lists the question numbers. Clicking on a question number scrolls to that question directly, so the TA doesn't have do it manually.\\
+The question numbers are colour-coded which shows the status of its evaluation. Green denotes evaluated and Red means the question is yet to be evaluated.
 
-\subsection{Downloading submitted files}
-TODO: This\\
-The file submission UI was very difficult and confusing. A button is shown now to download submitted files.
+\subsection{Auto-evaluate unattempted questions}
+Marks for those questions which are not answered are automatically set as zero. Also, the evaluation status of such questions in the Question Index Panel is set as `evaluated' so that the TAs need not check them at all.
+
+\subsection{Remove alert boxes}
+Both in student interface while answering the paper, and TA interface while evaluating (adding comments), javascript alert boxes were popping up. This feature which required a user interaction (mouse-click) was removed, and instead a notification message is shown which disappears automatically.
