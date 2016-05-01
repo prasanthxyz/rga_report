@@ -16,6 +16,7 @@ Create a lab in both. Difference: helper files upload.
 
 1. Show a sample lab01.odt
 2. Upload helper files
+3. Better interface for edit/delete labs
 
 ---
 
@@ -45,11 +46,6 @@ Have a lab already there in both databases.
     * Un-attempted questions automatically marked as zero and marked as evaluated.
 3. New STATIC navigation panel
 4. Evaluate answers, show the alert popup in old version.
-
----
-
-## Edit/Delete a lab
-* Better interface
 
 ---
 
